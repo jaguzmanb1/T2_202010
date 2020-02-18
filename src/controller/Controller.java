@@ -2,6 +2,8 @@ package controller;
 
 import java.util.Scanner;
 
+import model.data_structures.Queue;
+import model.logic.Comparendo;
 import model.logic.Modelo;
 import view.View;
 
@@ -46,9 +48,14 @@ public class Controller {
 				break;
 
 			case 2: 
-
-				view.printMessage("El cluster mas grande lo conforman los siguientes comparendos:");
-				view.printMessage(modelo.clusterConsecutivoMasGrande());
+				String rta = "";
+				Queue<Comparendo> qRespuesta = modelo.clusterConsecutivoMasGrande();
+				
+				view.printMessage("El cluster mas grande lo conforman los siguientes comparendos con " + qRespuesta.size() + " registros:");
+				for (int i = 0 ; i <= qRespuesta.size(); i++) {
+					rta += qRespuesta.dequeue().toString() + "\n";
+				}
+				view.printMessage(rta);
 				break;	
 
 			case 3: 

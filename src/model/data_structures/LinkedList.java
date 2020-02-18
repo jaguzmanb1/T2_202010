@@ -2,7 +2,7 @@ package model.data_structures;
 
 import model.data_structures.Node;
 
-public class LinkedList <T extends Comparable> implements ILinkedList<T>{
+public class LinkedList <T extends Comparable <T>> implements ILinkedList<T>{
 
 	private Node<T> primero;
 
@@ -115,5 +115,5 @@ public class LinkedList <T extends Comparable> implements ILinkedList<T>{
 			return true;
 		return false;
 	}
-
+	
 }

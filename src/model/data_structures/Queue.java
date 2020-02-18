@@ -66,4 +66,12 @@ public class Queue<T> implements IQueue<T>{
 		return ultimo;
 	}
 	
+	public void reemplazarCola(Queue<T> cola) {
+		vaciar();
+		int size = cola.size();
+		for (int i = 0 ; i < size ; i++) {
+			enqueue(cola.dequeue());
+		}
+	}
+	
 }
