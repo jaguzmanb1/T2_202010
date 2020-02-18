@@ -26,20 +26,11 @@ public class TestModelo {
 	public void testModelo() {
 		setUp1();
 		assertTrue(modelo!=null);
-		assertEquals(0, modelo.darTamano());  // Modelo con 0 elementos presentes.
-	}
-
-
-	@Test
-	public void testBuscar() {
-		setUp2();
-		Comparendo comparendo = new Comparendo (29042, null, null, null, null, null, null);
-		// TODO Completar la prueba 29042
-		assertEquals(null, modelo.buscar(41));
-		assertEquals("29042 ", modelo.buscar(29042).split("-")[0]);
-
+		assertEquals(0, modelo.darCantidadQueue());  // Modelo con 0 elementos presentes.
+		assertEquals(0, modelo.darCantidadStack());  // Modelo con 0 elementos presentes.
 
 	}
+
 }
 
 

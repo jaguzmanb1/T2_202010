@@ -50,24 +50,35 @@ public class Controller {
 			case 2: 
 				String rta = "";
 				Queue<Comparendo> qRespuesta = modelo.clusterConsecutivoMasGrande();
+				int qSize = qRespuesta.size();
+
 				
 				view.printMessage("El cluster mas grande lo conforman los siguientes comparendos con " + qRespuesta.size() + " registros:");
-				for (int i = 0 ; i <= qRespuesta.size(); i++) {
-					rta += qRespuesta.dequeue().toString() + "\n";
+				for (int i = 0 ; i < qRespuesta.size(); i++) {
+					view.printMessage(qRespuesta.dequeue().toString());
 				}
-				view.printMessage(rta);
 				break;	
 
 			case 3: 
+				rta = "";
+				
 				view.printMessage("Digite n:");
 				Scanner lector2 = new Scanner(System.in);
 				int n = lector2.nextInt();
+				
 				view.printMessage("Digite la infraccion:");
 				Scanner lector3 = new Scanner(System.in);
 				String infraccion = lector3.nextLine();
 				
+				qRespuesta = modelo.ultimosN(n, infraccion);
+				qSize = qRespuesta.size();
+
+				view.printMessage("Se encontraron " + qRespuesta.size() + " comparendos y son los siguientes: ");
 				
-				view.printMessage(modelo.ultimosN(n, infraccion));
+				for (int i = 0 ; i < qSize ; i++) {
+					view.printMessage(qRespuesta.dequeue().toString());
+				}
+				view.printMessage(rta);
 				break;	
 
 			default: 

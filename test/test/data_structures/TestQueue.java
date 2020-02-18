@@ -33,12 +33,12 @@ public class TestQueue{
 		
 		setUp();
 		assertEquals(5, test.size());
-		assertEquals("Item1",test.darPrimero().darElemento());
-		assertEquals("Item5",test.darUltimo().darElemento());
+		assertEquals("Item1",test.darPrimerElemento().darElemento());
+		assertEquals("Item5",test.darUltimoElemento().darElemento());
 		setUp2();
 		assertEquals(4, test.size());
-		assertEquals("Item2",test.darPrimero().darElemento());
-		assertEquals("Item5",test.darUltimo().darElemento());
+		assertEquals("Item2",test.darPrimerElemento().darElemento());
+		assertEquals("Item5",test.darUltimoElemento().darElemento());
 	}
 
 }

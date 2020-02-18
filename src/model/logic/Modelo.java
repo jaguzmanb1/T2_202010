@@ -79,25 +79,20 @@ public class Modelo {
 		return respuesta;
 	}
 	
-	public String ultimosN(int n, String tipoComparendo) {
-		ArregloDinamico<Comparendo> rta = new ArregloDinamico<Comparendo>(10);
-		String sRta = "";
-		
+	public Queue<Comparendo> ultimosN(int n, String tipoComparendo) {
+		Queue<Comparendo> cola = new Queue<Comparendo>();
 		int tamano = stack.size();
-		for (int i = 0 ; i < tamano && i < n ; i++) {
+		int tempTamano = 0;
+		
+		for (int i = 0 ; i < tamano && tempTamano < n; i++) {
 			Comparendo comparendo = stack.pop();
-			if (comparendo.darInfraccion().equalsIgnoreCase(tipoComparendo)) {
-				rta.agregar(comparendo);
-				System.out.println(comparendo.darInfraccion());
 
+			if (comparendo.darInfraccion().compareToIgnoreCase(tipoComparendo) == 0) {
+				cola.enqueue(comparendo);
+				tempTamano++;
 			}
 		}
-		
-		for (int i = 0 ; i <= rta.darTamano(); i++) {
-			sRta += rta.darElemento(i).toString() + "\n";
-		}
-		
-		return sRta;
+		return cola;
 	}
 
 	public void cargarDatos() {
