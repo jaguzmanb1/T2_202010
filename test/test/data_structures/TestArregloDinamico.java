@@ -1,6 +1,6 @@
 package test.data_structures;
 
-import model.data_structures.arregloDinamico;
+import model.data_structures.ArregloDinamico;
 
 import static org.junit.Assert.*;
 
@@ -9,12 +9,12 @@ import org.junit.Test;
 
 public class TestArregloDinamico {
 
-	private arregloDinamico<Integer> arreglo;
+	private ArregloDinamico<Integer> arreglo;
 	private static int TAMANO=100;
 	
 	@Before
 	public void setUp1() {
-		arreglo= new arregloDinamico<Integer>(TAMANO);
+		arreglo= new ArregloDinamico<Integer>(TAMANO);
 	}
 
 	public void setUp2() {

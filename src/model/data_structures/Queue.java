@@ -33,6 +33,13 @@ public class Queue<T> implements IQueue<T>{
 	}
 	
 	@Override
+	public boolean isEmpty() {
+		if (numElems == 0)
+			return true;
+		return false;
+	}
+	
+	@Override
 	public void enqueue(T elemento) {
 		NodeCola<T> nodo = new NodeCola<T>( elemento );
 		if( primero == null ){
@@ -57,6 +64,14 @@ public class Queue<T> implements IQueue<T>{
 	
 	public NodeCola<T> darUltimoElemento( ){
 		return ultimo;
+	}
+	
+	public void reemplazarCola(Queue<T> cola) {
+		vaciar();
+		int size = cola.size();
+		for (int i = 0 ; i < size ; i++) {
+			enqueue(cola.dequeue());
+		}
 	}
 	
 }

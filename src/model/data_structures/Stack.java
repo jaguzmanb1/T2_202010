@@ -20,6 +20,13 @@ public class Stack<T> implements IStack<T> {
 		
 	}
 	
+	@Override
+	public boolean isEmpty() {
+		if (numeroElementos == 0)
+			return true;
+		return false;
+	}
+	
 	public T pop() 
 	{
 		NodoStack<T> primerElementoAEliminar = primerElemeto;

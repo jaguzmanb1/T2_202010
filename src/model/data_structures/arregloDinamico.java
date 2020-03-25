@@ -7,7 +7,7 @@ package model.data_structures;
  * @author Fernando De la Rosa
  *
  */
-public class arregloDinamico<T extends Comparable<T>> implements IArregloDinamico<T> {
+public class ArregloDinamico<T extends Comparable<T>> implements IArregloDinamico<T> {
 
 	private int tamanoMax;
 
@@ -16,7 +16,7 @@ public class arregloDinamico<T extends Comparable<T>> implements IArregloDinamic
 	private T elementos[ ];
 
 	@SuppressWarnings("unchecked")
-	public arregloDinamico( int max )
+	public ArregloDinamico( int max )
 	{
 		elementos = (T[])new Comparable[max];
 		tamanoMax = max;

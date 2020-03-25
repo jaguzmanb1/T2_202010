@@ -7,5 +7,7 @@ public interface IQueue<T>{
 	public T dequeue();
 
 	public void enqueue(T elemento);
+
+	boolean isEmpty();
 	
 }
